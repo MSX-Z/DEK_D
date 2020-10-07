@@ -21,6 +21,8 @@
         android:layout_height="wrap_content"
         android:text="Title"
         android:textSize="24dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
         android:textColor="@color/colorBlack"/>
 
     <TextView
@@ -29,6 +31,8 @@
         android:layout_height="wrap_content"
         android:text="Message"
         android:textSize="18dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
         android:textColor="@color/colorGray"/>
 
 </LinearLayout>
