@@ -75,7 +75,7 @@ public class ListFragment extends Fragment{
                 title = v.findViewById(R.id.title);
                 massage = v.findViewById(R.id.message);
 
-                builder.setView(v).setTitle("Login")
+                builder.setView(v).setTitle("Add items.")
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
