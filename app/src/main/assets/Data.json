@@ -1,0 +1,22 @@
+[
+	{
+		"picture": "https://cdn1.iconfinder.com/data/icons/ios-7-style-metro-ui-icons/512/MetroUI_OS_Android.png",
+		"title": "Jelly Bean 4.1.x",
+		"message": "API level 16"
+	},
+	{
+		"picture": "https://cdn1.iconfinder.com/data/icons/ios-7-style-metro-ui-icons/512/MetroUI_OS_Android.png",
+		"title": "KitKat 4.4 - 4.4.4",
+		"message": "API level 19"
+	},
+	{
+		"picture": "https://cdn1.iconfinder.com/data/icons/ios-7-style-metro-ui-icons/512/MetroUI_OS_Android.png",
+		"title": "Lollipop 5.0",
+		"message": "API level 21"
+	},
+	{
+		"picture": "https://cdn1.iconfinder.com/data/icons/ios-7-style-metro-ui-icons/512/MetroUI_OS_Android.png",
+		"title": "Marshmallow 6.0",
+		"message": "API level 23"
+	}
+]
