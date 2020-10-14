@@ -31,8 +31,10 @@ public class ListFragment extends Fragment{
     private List<Data> list;
     private ListAdapter listAdapter;
 
-    private ListView listView;
+    private ListView list_view;
     private FloatingActionButton btn_add;
+
+    private AlertDialog.Builder builder;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,14 +46,16 @@ public class ListFragment extends Fragment{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listView = view.findViewById(R.id.list_view);
+        list_view = view.findViewById(R.id.list_view);
         btn_add = view.findViewById(R.id.btn_add);
+
+        builder = new AlertDialog.Builder(getContext());
 
         list = (List<Data>) getArguments().getSerializable("box");
         listAdapter = new ListAdapter(getContext(), list);
-        listView.setAdapter(listAdapter);
+        list_view.setAdapter(listAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Bundle bundle = new Bundle();
@@ -59,6 +63,30 @@ public class ListFragment extends Fragment{
                 DetailFragment detailFragment = new DetailFragment();
                 getFragmentManager().beginTransaction().replace(R.id.container_fm, detailFragment).addToBackStack(null).commit();
                 detailFragment.setArguments(bundle);
+            }
+        });
+
+        list_view.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                builder.setTitle("Are you sure ?");
+                builder.setMessage("Delete "+list.get(i).getTile()+"\n"+list.get(i).getMessage());
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int ix) {
+                        list.remove(i);
+                        listAdapter.notifyDataSetChanged();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int ix) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                builder.create().show();
+                return true;
             }
         });
 
