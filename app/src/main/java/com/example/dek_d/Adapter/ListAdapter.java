@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.example.dek_d.Model.Data;
 import com.example.dek_d.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -57,7 +57,7 @@ public class ListAdapter extends ArrayAdapter<List<Data>> {
 
     private void setData(int position) {
         Data data = list.get(position);
-        Picasso.get().load(data.getPicture()).into(picture);
+        Glide.with(context).load(data.getPicture()).into(picture);
         title.setText(data.getTile());
         message.setText(data.getMessage());
     }

@@ -13,15 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.dek_d.Adapter.DetailAdapter;
-import com.example.dek_d.Adapter.ListAdapter;
 import com.example.dek_d.Model.Data;
 import com.example.dek_d.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
